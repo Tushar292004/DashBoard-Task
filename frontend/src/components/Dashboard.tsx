@@ -18,7 +18,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:7000/dashboard");
+        const response = await axios.get("https://dashboard-task-wkkg.onrender.com");
         setUsers(response.data);
       } catch (error) {
         console.error("Error fetching users:", error);
@@ -37,7 +37,7 @@ const Dashboard = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:7000/create", {
+      const response = await axios.post("https://dashboard-task-wkkg.onrender.com/create", {
         name,
         dob: dob.toISOString().split("T")[0],
       });
@@ -58,7 +58,7 @@ const Dashboard = () => {
 
   const handleSave = async (userId: string, updatedName: string, updatedDob: Date) => {
     try {
-      const response = await axios.put(`http://localhost:7000/edit/${userId}`, {
+      const response = await axios.put(`https://dashboard-task-wkkg.onrender.com/edit/${userId}`, {
         name: updatedName,
         dob: updatedDob.toISOString().split("T")[0],
       });
@@ -73,7 +73,7 @@ const Dashboard = () => {
 
   const handleDelete = async (userId: string) => {
     try {
-      await axios.delete(`http://localhost:7000/delete/${userId}`);
+      await axios.delete(`https://dashboard-task-wkkg.onrender.com/delete/${userId}`);
       toast.success("User deleted successfully!");
       setUsers(users.filter((user) => user._id !== userId));
     } catch (error) {
