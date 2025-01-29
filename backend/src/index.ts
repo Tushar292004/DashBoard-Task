@@ -6,7 +6,7 @@ import User from "./models/User";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin: "https://dash-board-task.vercel.app/",}));
 
 //connecting mongodb uri as string
 mongoose
