@@ -7,7 +7,7 @@ import axios from "axios";
 import { toast, Toaster } from "sonner";
 import { FaPen, FaTrashAlt } from "react-icons/fa"; 
 import { Skeleton }from "@/components/ui/skeleton"; 
-
+ 
 const Dashboard = () => {
   const [name, setName] = useState("");
   const [dob, setDob] = useState<Date | null>(null);
