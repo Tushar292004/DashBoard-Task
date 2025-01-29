@@ -5,7 +5,7 @@ import UsernameMenu from "./UsernameMenu";
 const MainNav = () => {
 
     // auth0 hook for login funcitonality
-    const { loginWithRedirect, isAuthenticated, user } = useAuth0()
+    const { loginWithRedirect, isAuthenticated } = useAuth0()
     return (
 
     <span className="flex space-x-2 items-center text-ld text-orange-500 font-semibold">
